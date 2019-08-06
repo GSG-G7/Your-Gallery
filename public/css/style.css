@@ -1,0 +1,17 @@
+*{
+    padding:0;
+    margin:0;
+}
+.error-img{
+    display: block;
+    max-width: 40vw;
+    margin: 5vh auto 1rem auto;
+    
+}
+.error-header{
+    font-family: sans-serif;
+    color: red;
+    margin-top: 9vh;
+    text-align: center;
+    text-transform: capitalize;
+}
