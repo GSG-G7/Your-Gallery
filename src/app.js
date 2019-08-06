@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
+const compression = require('compression');
 const path = require('path');
 
 const controllers = require('./controllers/index');
@@ -17,7 +18,7 @@ app.engine('hbs', exphbs({
   defaultLayout: 'main',
   helpers,
 }));
-
+app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false,
