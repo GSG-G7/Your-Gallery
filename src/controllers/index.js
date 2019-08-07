@@ -13,12 +13,8 @@ const {
 const router = express.Router();
 
 router.get('/', get);
-// router.get('/data', post);
+router.get('/data', getdata);
 router.use('*', client);
 router.use(server);
 
-const input = 'cat';
-const apiKey = process.env.API_KEY;
-const url = `http://api.giphy.com/v1/gifs/search?q=${input}&api_key=${apiKey}`;
-getdata(url);
 module.exports = router;

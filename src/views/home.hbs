@@ -1,10 +1,18 @@
-<header>
-    <h1>{{title}}</h1>
-</header>
-<form>
-    <input id='Search' type="text" value="" name="text" placeholder="Type any gipghy" required>
-    <input id='submit' type="submit" value="Search">
-</form>
-<footer>
-    <p>Copyright 2019</p>
-</footer>
+<section class="home">
+    <header class="home__header">
+        <h1 class="home__logo">{{title}}</h1>
+    </header>
+    <section>
+        <form class="home__form">
+            <input id='Search' class="home__main__input" type="text" value="" aria-label="" name="gif"
+                placeholder="Type Gif Name" required>
+            <input id='submit' class="home__main__search" type="submit" value="Search" aria-label="">
+        </form>
+        <div class="gifs">
+
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="footer__rights"> Your Gallery © 2019 All Rights Reserved</p>
+    </footer>
+</section>

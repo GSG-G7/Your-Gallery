@@ -1,14 +1,90 @@
-*{
-    padding:0;
-    margin:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.error-img{
+
+body {
+    background-color: #000;
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+.home__header {
+    font-family: "Pacifico", cursive;
+    font-size: 1.7rem;
+    padding: 2rem;
+    text-align: center;
+    color: #DF496F;
+}
+
+.home__form {
+    text-align: center;
+}
+
+.home__main__input {
+    border: none;
+    outline: none;
+    padding: 0.9rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 60%;
+}
+
+.home__main__search {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.9rem 2rem;
+    margin: 0.4rem 0.3rem;
+    border-radius: 11px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: capitalize;
+    background: #DF496F;
+}
+
+.gifs {
+    display: flex;
+    flex-direction: row;
+}
+
+.gifs>div {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 3);
+}
+
+.gifs img {
+    display: block;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.footer {
+    width: 100%;
+    background: #1f1c1c81;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0rem;
+}
+
+.error__img {
     display: block;
     max-width: 40vw;
     margin: 5vh auto 1rem auto;
-    
+
 }
-.error-header{
+
+.error__header {
     font-family: sans-serif;
     color: red;
     margin-top: 9vh;
