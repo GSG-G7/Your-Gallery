@@ -77,8 +77,6 @@ body {
     width: 100%;
     background: #1f1c1c81;
     text-align: center;
-    display: flex;
-    flex-direction: column;
     padding: 1.5rem;
     color: #ffffff;
     position: fixed;
