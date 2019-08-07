@@ -3,7 +3,6 @@ const { filterData } = require('./../logic');
 require('dotenv').config();
 
 const apiKey = process.env.API_KEY;
-
 exports.getPhoto = (req, res) => {
   const { gif: input } = req.query;
   const url = `http://api.giphy.com/v1/gifs/search?q=${input}&api_key=${apiKey}`;
