@@ -6,5 +6,4 @@ exports.postContact = (req, res, next) => {
     if (err) next(err);
   });
   res.status(304).redirect('/');
-//   res.render('home', { title: 'Your Gallery' });
 };
