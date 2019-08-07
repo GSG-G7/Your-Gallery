@@ -104,6 +104,29 @@ body {
     text-align: center;
     text-transform: capitalize;
 }
+.contact{
+    margin: 1rem;
+}
+.contact__button{
+    background: #DF496F;
+    color: #ffffff;
+    padding: 0.3rem 0.5rem;
+    border: none !important;
+}
+.contact input {
+    padding: 0.5rem 0.8rem;
+    border-radius: 7px;
+    text-align: center;
+    margin: 0.2rem;
+}
+
+.contact input:valid{
+    border: 2px solid green;
+}
+
+.contact input:invalid{
+    border: 2px solid #DF496F;
+}
 
 @media (max-width: 600px) {
     .home__form{
