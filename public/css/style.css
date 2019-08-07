@@ -21,6 +21,7 @@ body {
 
 .home__form {
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .home__main__input {
@@ -50,15 +51,22 @@ body {
 .gifs {
     display: flex;
     flex-direction: row;
+    margin: auto 3rem;
 }
 
-.gifs>div {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% / 3);
+.gifs__gif {
+    width: 30%;
+    margin: 1rem;
 }
-
-.gifs img {
+.gifs__title{
+    color: #ffffff;
+    margin-top: 0.5rem;
+    text-align: left; 
+    font-family: sans-serif;
+    text-transform: capitalize;
+    width: 80%;
+}
+.gifs__image {
     display: block;
     width: 100%;
     border-top-left-radius: 4px;
@@ -90,4 +98,23 @@ body {
     margin-top: 9vh;
     text-align: center;
     text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+    .home__form{
+        margin: 1rem 0.4rem;
+    }
+    .gifs {
+        display: flex;
+        flex-direction: column;
+        margin: auto 0.3rem;
+    }
+    .gifs__gif {
+        width: 80%;
+        margin: 1rem auto;
+        display: block;
+    }
+    .gifs__image {
+        width: 100%;
+    }
 }

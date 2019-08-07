@@ -1,18 +1,19 @@
 <section class="home">
-    <header class="home__header">
-        <h1 class="home__logo">{{title}}</h1>
-    </header>
+    {{> header}}
     <section>
-        <form class="home__form">
+        <form class="home__form" action="/photo" method="GET">
             <input id='Search' class="home__main__input" type="text" value="" aria-label="" name="gif"
                 placeholder="Type Gif Name" required>
             <input id='submit' class="home__main__search" type="submit" value="Search" aria-label="">
         </form>
         <div class="gifs">
-
+            {{#each images}}
+            <div class="gifs__gif">
+                <img src="{{this.Imagesurl}}" alt="image" class="gifs__image">
+                <h4 class="gifs__title">{{this.ImagesTitle}}</h4>
+            </div>
+            {{/each}}
         </div>
     </section>
-    <footer class="footer">
-        <p class="footer__rights"> Your Gallery © 2019 All Rights Reserved</p>
-    </footer>
+    {{> footer}}
 </section>
