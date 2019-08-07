@@ -59,7 +59,7 @@ test('test success for /photo endpoint', (t) => {
     .end((err, res) => {
       t.error(err);
       const isInclode = res.text.includes('image');
-      t.equals(isInclode, true, 'should response have gifs__gif');
+      t.equals(isInclode, true, 'should response have image');
       t.end();
     });
 });
