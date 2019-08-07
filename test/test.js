@@ -67,6 +67,21 @@ test('test success for /photo endpoint', (t) => {
       }
     });
 });
+test('test success for /photo endpoint', (t) => {
+  supertest(app)
+    .post('/contact')
+    .send({ name: 'mohamaad', email: 'g@a' })
+    .set('Accept', 'application/json')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+      } else {
+        t.equals(res.text.includes('done'), true, 'must be res have done ');
+      } t.end();
+    });
+});
 
 test('test for client error 404', (t) => {
   supertest(app)
