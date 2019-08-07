@@ -47,7 +47,12 @@ body {
     text-transform: capitalize;
     background: #DF496F;
 }
-
+.status{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 3rem;
+    color: #DF496F;
+}
 .gifs {
     display: flex;
     flex-direction: row;

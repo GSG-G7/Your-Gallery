@@ -5,6 +5,6 @@ exports.postContact = (req, res, next) => {
   fs.appendFile(join(__dirname, '..', 'models', 'contacts.json'), JSON.stringify(req.body), (err) => {
     if (err) next(err);
   });
-  res.status(304).redirect('/');
-//   res.render('home', { title: 'Your Gallery' });
+  // res.status(304).redirect('/');
+  res.render('home', { title: 'Your Gallery', status: 'done' });
 };
