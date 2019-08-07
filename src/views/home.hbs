@@ -1,10 +1,19 @@
-{{> header}}
-<form action="/photo" method="GET">
-    <input id='search' type="text" value="" name="text" placeholder="Type any gipghy" required>
-    <input id='submit' type="submit" value="Search">
-    {{#each images}}
-      <h1>{{this.ImagesTitle}}</h1>
-      <img src="{{this.Imagesurl}}" alt="image">
-    {{/each}}
-</form>
-{{> footer}}
+<section class="home">
+    {{> header}}
+    <section>
+        <form class="home__form" action="/photo" method="GET">
+            <input id='Search' class="home__main__input" type="text" value="" aria-label="" name="gif"
+                placeholder="Type Gif Name" required>
+            <input id='submit' class="home__main__search" type="submit" value="Search" aria-label="">
+        </form>
+        <div class="gifs">
+            {{#each images}}
+            <div class="gifs__gif">
+                <img src="{{this.Imagesurl}}" alt="image" class="gifs__image">
+                <h4 class="gifs__title">{{this.ImagesTitle}}</h4>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{> footer}}
+</section>

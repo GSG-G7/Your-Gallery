@@ -1,17 +1,118 @@
-*{
-    padding:0;
-    margin:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.error-img{
+
+body {
+    background-color: #000;
+    background-image: url('../assets/bg.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+.home__header {
+    font-family: "Pacifico", cursive;
+    font-size: 1.7rem;
+    padding: 2rem;
+    text-align: center;
+    color: #DF496F;
+}
+
+.home__form {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.home__main__input {
+    border: none;
+    outline: none;
+    padding: 0.9rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 60%;
+}
+
+.home__main__search {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.9rem 2rem;
+    margin: 0.4rem 0.3rem;
+    border-radius: 11px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: capitalize;
+    background: #DF496F;
+}
+
+.gifs {
+    display: flex;
+    flex-direction: row;
+    margin: auto 3rem;
+}
+
+.gifs__gif {
+    width: 30%;
+    margin: 1rem;
+}
+.gifs__title{
+    color: #ffffff;
+    margin-top: 0.5rem;
+    text-align: left; 
+    font-family: sans-serif;
+    text-transform: capitalize;
+    width: 80%;
+}
+.gifs__image {
+    display: block;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.footer {
+    width: 100%;
+    background: #1f1c1c81;
+    text-align: center;
+    padding: 1.5rem;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0rem;
+}
+
+.error__img {
     display: block;
     max-width: 40vw;
     margin: 5vh auto 1rem auto;
-    
+
 }
-.error-header{
+
+.error__header {
     font-family: sans-serif;
     color: red;
     margin-top: 9vh;
     text-align: center;
     text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+    .home__form{
+        margin: 1rem 0.4rem;
+    }
+    .gifs {
+        display: flex;
+        flex-direction: column;
+        margin: auto 0.3rem;
+    }
+    .gifs__gif {
+        width: 80%;
+        margin: 1rem auto;
+        display: block;
+    }
+    .gifs__image {
+        width: 100%;
+    }
 }
