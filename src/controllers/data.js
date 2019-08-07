@@ -1,9 +1,13 @@
 const fetch = require('node-fetch');
+const { filterData } = require('./../logic');
 require('dotenv').config();
 
-const input = 'cat';
 const apiKey = process.env.API_KEY;
-const url = `http://api.giphy.com/v1/gifs/search?q=${input}&api_key=${apiKey}`;
-exports.getdata = () => {
-  fetch(url).then(res => res.json()).then(res => console.log(res)).catch(err => console.log(err));
+exports.getPhoto = (req, res) => {
+  const { text: input } = req.query;
+  const url = `http://api.giphy.com/v1/gifs/search?q=${input}&api_key=${apiKey}`;
+  fetch(url).then(resGify => resGify.json())
+    .then(res1 => filterData(res1.data))
+    .then(result => res.render('home', { images: result }))
+    .catch(err => res.next(err));
 };

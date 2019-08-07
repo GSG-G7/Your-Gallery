@@ -1,10 +1,10 @@
-<header>
-    <h1>{{title}}</h1>
-</header>
-<form>
-    <input id='Search' type="text" value="" name="text" placeholder="Type any gipghy" required>
+{{> header}}
+<form action="/photo" method="GET">
+    <input id='search' type="text" value="" name="text" placeholder="Type any gipghy" required>
     <input id='submit' type="submit" value="Search">
+    {{#each images}}
+      <h1>{{this.ImagesTitle}}</h1>
+      <img src="{{this.Imagesurl}}" alt="image">
+    {{/each}}
 </form>
-<footer>
-    <p>Copyright 2019</p>
-</footer>
+{{> footer}}
