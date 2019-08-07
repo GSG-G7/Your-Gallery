@@ -10,5 +10,5 @@ exports.getPhoto = (req, res, next) => {
   fetch(url).then(resGify => resGify.json())
     .then(res1 => filterData(res1.data))
     .then(result => res.render('home', { images: result, title: 'Your Gallery' }))
-    .catch(err => next(err));
+    .catch((err) => { console.log(err); return next(err); });
 };
