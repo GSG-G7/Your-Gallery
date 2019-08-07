@@ -8,7 +8,7 @@ exports.getPhoto = (req, res, next) => {
   const url = `http://api.giphy.com/v1/gifs/search?q=${input}&api_key=${apiKey}`;
 
   fetch(url).then(resGify => resGify.json())
-    .then(res1 => filterData(res1.data))
+    .then((res1) => { console.log(res1); return filterData(res1.data) ;})
     .then(result => res.render('home', { images: result, title: 'Your Gallery' }))
     .catch((err) => { console.log(err); return next(err); });
 };
