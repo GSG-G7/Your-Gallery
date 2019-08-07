@@ -43,7 +43,8 @@ test('test success for main endpoint /', (t) => {
     .get('/')
     .expect(200)
     .expect('Content-Type', /html/)
-    .then((res) => {
+    .end((err, res) => {
+      t.error(err);
       const isInclode = res.text.includes('Your Gallery');
       t.equals(isInclode, true, 'should response have Your Gallery');
       t.end();
@@ -55,10 +56,15 @@ test('test success for /photo endpoint', (t) => {
     .get('/photo')
     .expect(200)
     .expect('Content-Type', /html/)
-    .then((res) => {
-      const isInclode = res.text.includes('image');
-      t.equals(isInclode, true, 'should response have gifs__gif');
-      t.end();
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+        t.end();
+      } else {
+        const isInclode = res.text.includes('image');
+        t.equals(isInclode, true, 'should response have gifs__gif');
+        t.end();
+      }
     });
 });
 
@@ -67,8 +73,13 @@ test('test for client error 404', (t) => {
     .get('/err')
     .expect(404)
     .expect('Content-Type', /html/)
-    .then((res) => {
-      t.equal(res.clientError, true, 'should be client error');
-      t.end();
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+        t.end();
+      } else {
+        t.equal(res.clientError, true, 'should be client error');
+        t.end();
+      }
     });
 });
