@@ -28,9 +28,49 @@ const actual = {
     title: 'cat GIF',
   }],
 };
+
+test('test filterData function', (t) => {
+  const expected = [{
+    Imagesurl: 'https://media1.giphy.com/avatars/leroypatterson/kmR9dQjdzWa3.gif',
+    ImagesTitle: 'cat GIF',
+  }];
+  t.deepEqual(filterData(actual.data), expected, `should equals ${JSON.stringify(expected)}`);
+  t.end();
+});
+
+test('test success for main endpoint /', (t) => {
+  supertest(app)
+    .get('/')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      t.error(err);
+      const isInclode = res.text.includes('Your Gallery');
+      t.equals(isInclode, true, 'should response have Your Gallery');
+      t.end();
+    });
+});
+
+test('test success for /photo endpoint', (t) => {
+  supertest(app)
+    .get('/photo')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+        t.end();
+      } else {
+        const isInclode = res.text.includes('image');
+        t.equals(isInclode, true, 'should response have gifs__gif');
+        t.end();
+      }
+    });
+});
+
 test('test for client error 404', (t) => {
   supertest(app)
-    .get('/error')
+    .get('/err')
     .expect(404)
     .expect('Content-Type', /html/)
     .end((err, res) => {
@@ -42,13 +82,4 @@ test('test for client error 404', (t) => {
         t.end();
       }
     });
-});
-
-test('test filterData function', (t) => {
-  const expected = [{
-    Imagesurl: 'https://media1.giphy.com/avatars/leroypatterson/kmR9dQjdzWa3.gif',
-    ImagesTitle: 'cat GIF',
-  }];
-  t.deepEqual(filterData(actual.data), expected, `should equals ${JSON.stringify(expected)}`);
-  t.end();
 });

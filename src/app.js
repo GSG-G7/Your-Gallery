@@ -18,13 +18,14 @@ app.engine('hbs', exphbs({
   partialsDir: join(__dirname, 'views', 'partials'),
   helpers,
 }));
+app.disable('x-powered-by');
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({
   extended: false,
 }));
 app.use(express.static(join(__dirname, '..', 'public')));
-app.set('port', process.env.PORT || 3200);
+app.set('port', process.env.PORT || 3012);
 app.use(controllers);
 
 module.exports = app;
