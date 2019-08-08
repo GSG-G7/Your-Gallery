@@ -41,7 +41,7 @@ body {
     padding: 0.9rem 2rem;
     margin: 0.4rem 0.3rem;
     border-radius: 11px;
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     font-weight: 700;
     text-transform: capitalize;
@@ -104,7 +104,7 @@ body {
 }
 .contact__button{
     background: #DF496F;
-    color: #ffffff;
+    color: #000000;
     padding: 0.3rem 0.5rem;
     border: none !important;
 }
