@@ -3,10 +3,7 @@ const email = document.querySelector('#email');
 const form = document.querySelector('.contact');
 
 const checkEmail = () => {
-  if (email.validity.typeMismatch) {
-    email.classList.add('invalid');
-    return false;
-  } if (email.validity.valueMissing) {
+  if (email.validity.typeMismatch || email.validity.valueMissing) {
     email.classList.add('invalid');
     return false;
   }
@@ -24,10 +21,7 @@ const checkName = () => {
 };
 
 form.addEventListener('sumbit', (e) => {
-  if (!checkEmail()) {
-    e.preventDefault();
-  }
-  if (!checkName()) {
+  if (!checkEmail() || !checkName()) {
     e.preventDefault();
   }
 });
