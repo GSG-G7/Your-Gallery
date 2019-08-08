@@ -6,4 +6,4 @@ exports.filterData = data => data.map((element) => {
     });
   }
   return undefined;
-}).filter(item => item !== undefined);
+}).filter(item => item);
