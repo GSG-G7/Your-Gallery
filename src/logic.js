@@ -1,8 +1,8 @@
 exports.filterData = data => data.map((element) => {
   if (element.user && element.title) {
     return ({
-      Imagesurl: element.user.avatar_url,
-      ImagesTitle: element.title,
+      imagesUrl: element.user.avatar_url,
+      imagesTitle: element.title,
     });
   }
   return undefined;

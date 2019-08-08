@@ -31,8 +31,8 @@ const actual = {
 
 test('test filterData function', (t) => {
   const expected = [{
-    Imagesurl: 'https://media1.giphy.com/avatars/leroypatterson/kmR9dQjdzWa3.gif',
-    ImagesTitle: 'cat GIF',
+    imagesUrl: 'https://media1.giphy.com/avatars/leroypatterson/kmR9dQjdzWa3.gif',
+    imagesTitle: 'cat GIF',
   }];
   t.deepEqual(filterData(actual.data), expected, `should equals ${JSON.stringify(expected)}`);
   t.end();
@@ -65,6 +65,21 @@ test('test success for /photo endpoint', (t) => {
         t.equals(isInclode, true, 'should response have gifs__gif');
         t.end();
       }
+    });
+});
+test('test success for /contact endpoint', (t) => {
+  supertest(app)
+    .post('/contact')
+    .send({ name: 'mohamaad', email: 'g@a' })
+    .set('Accept', 'application/json')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+      } else {
+        t.equals(res.text.includes('done'), true, 'must be res have done ');
+      } t.end();
     });
 });
 
